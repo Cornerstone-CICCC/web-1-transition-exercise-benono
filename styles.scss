@@ -1,0 +1,76 @@
+@keyframes moveAndChangeShape {
+  0% {
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 100px);
+    border-radius: 0;
+  }
+  50% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    border-radius: 50%;
+  }
+  75% {
+    top: calc(100% - 100px);
+    left: 0;
+    border-radius: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+}
+
+.circle {
+  position: absolute;
+  animation: moveAndChangeShape 6s linear infinite;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+}
+.loading-bar-container {
+  width: 60%; // 横幅を少し短くする
+  height: 100px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // 画面中央に配置するためのスタイル
+}
+
+
+.loading-bar {
+  width: 0;
+  height: 100%;
+  background-color: green;
+  animation: fillLoadingBar 2s linear forwards infinite;
+}
+
+@keyframes fillLoadingBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+// .circle {
+//     width: 100px;
+//     height: 100px;
+//     background-color: yellow;
+//     border-radius: 50%;
+//     transition: opacity 0.5s;
+//   }
+
+//   .circle:hover {
+//     opacity: 0;
+//   }
